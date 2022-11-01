@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+    <h4><center>Addd Marks OF Student</center></h4>
+    <div class="row">
+        <div class="col-sm-10 offset-2">
+            
+            <form action="{% url 'Addmarks' stdid %}" method="post">
+                {% csrf_token %}
+                
+                <input type="number" name="id" id="inputId" class="form-control" value="{{stdid}}" min="{5"} max="" disabled  ><br>
+                <input type="text" name="Fname" id="input" class="form-control" value="{{fname}} {{mname}} {{lname}}" required="required"  placeholder="C Marks" disabled><br>
+                <input type="number" name="cMark" id="inputMname" class="form-control" value="{{c}}" required="required"  title="" placeholder="C MArks"><br>
+                <input type="text" name="cppMarks" id="inputLname" class="form-control" value="{{cpp}}" required="required"  title="" placeholder="CPP Marks"><br>
+                <input type="text" name="pyMarks" id="inputLname" class="form-control" value="{{py}}" required="required"  title="" placeholder="Python Marks"><br>
+                <br>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+{% endblock content %}

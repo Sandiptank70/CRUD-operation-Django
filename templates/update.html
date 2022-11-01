@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+    <h4><center>Update Student</center></h4>
+    <div class="row">
+        <div class="col-sm-10 offset-2">
+            
+            <form action="{% url 'updatedata' id %}" method="post">
+                {% csrf_token %}
+                
+                <input type="number" name="id" id="inputId" class="form-control" value="{{id}}" min="{5"} max="" disabled  ><br>
+                <input type="text" name="Fname" id="input" class="form-control" value="{{fname}}" required="required"  placeholder="First Name"><br>
+                <input type="text" name="Mname" id="inputMname" class="form-control" value="{{mname}}" required="required"  title="" placeholder="Middle Name"><br>
+                <input type="text" name="Lname" id="inputLname" class="form-control" value="{{lname}}" required="required"  title="" placeholder="Last Name"><br>
+                <select name="course" id="inputCourse" class="form-control" required="required">
+                    <option value="MCA">MCA</option>
+                    <option value="IT">IT</option>
+                    <option value="COMPUTER">COMPUTER</option>
+                </select><br>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+{% endblock content %}
